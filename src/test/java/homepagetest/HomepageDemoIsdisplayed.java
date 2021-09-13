@@ -17,6 +17,7 @@ public class HomepageDemoIsdisplayed extends HomepageTestBase{
 		
 		HomePage hp2 = new HomePage(driver);
 		hp2.getdemotext();
+		System.out.println();
 		String expected = "demo";
 		String actual = hp2.getdemotext();
 		Assert.assertEquals(actual, expected);
