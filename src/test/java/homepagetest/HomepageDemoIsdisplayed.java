@@ -22,6 +22,13 @@ public class HomepageDemoIsdisplayed extends HomepageTestBase{
 		String actual = hp2.getdemotext();
 		Assert.assertEquals(actual, expected);
 		
+		
+		hp2.scrolltoElement(driver);
+		System.out.println("text");
+		
+
+		
 	}
+	
 
 }

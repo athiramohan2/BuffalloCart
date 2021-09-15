@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="usercreation_test.NewUserCreation">
+      <class name="usercreation_test.SearchUser">
         <methods>
-          <include name="createUser"/>
+          <include name="searchUser"/>
           <include name="openurl"/>
         </methods>
-      </class> <!-- usercreation_test.NewUserCreation -->
+      </class> <!-- usercreation_test.SearchUser -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

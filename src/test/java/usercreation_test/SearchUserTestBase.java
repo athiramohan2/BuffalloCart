@@ -1,19 +1,15 @@
 package usercreation_test;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.BeforeMethod;
 
 import pages.HomePage;
 import pages.LoginPage;
 import pages.UserPage;
+import pages.UserSearchPage;
 import utils.DriverFactory;
 
-public class UserpageTestBase {
+public class SearchUserTestBase {
 WebDriver driver;
 	
 	@BeforeMethod
@@ -38,11 +34,7 @@ WebDriver driver;
 			Thread.sleep(10000);
 			
 			hp.user.click();
-			
-			UserPage up = new UserPage(driver);
-			up.ClickNewUser();
-			
-			
+					
 			}
 
 }

@@ -1,10 +1,12 @@
 package usercreation_test;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
 import homepagetest.HomepageTestBase;
+import pages.NewUserPage;
 import pages.UserPage;
 
 public class NewUserCreation extends UserpageTestBase{
@@ -12,26 +14,39 @@ public class NewUserCreation extends UserpageTestBase{
 	
 	
 	@Test
-	public void createUser()
+	public void createUser() throws InterruptedException
 	{
 		
-		UserPage up = new UserPage(driver);
+		NewUserPage nup = new NewUserPage(driver);
+		
 				
-				up.fullname.sendKeys("ABCD");
+				nup.enterFullname("Blue");
+								
+				nup.enterEmpID();
+								
+				nup.enterUsername("AB");
+								
+				nup.enterNewPswd();
+								
+				nup.ConfirmPassword();
+								
+				nup.enterEmail();
+				nup.Locale("English (United States)");
+				nup.LanguageSelect();
+				nup.enterPhone();
+				nup.enterMobile();
+				nup.enterSkype();
+//				JavascriptExecutor executor = (JavascriptExecutor)driver;
+//				executor.executeScript("arguments[0].click();", up.choose);
+				Thread.sleep(2000);
+			    nup.ClickChoose();
 				
+				nup.uploadProfileImg("C:\\Users\\athir\\Desktop\\Selenium\\flower.PNG");
 				
-				up.empid.sendKeys("123456");
+				nup.selectUserType("Staff");
+				nup.SelectDesignation("Manager");
 				
+				nup.CreateUser();
 				
-				up.uname.sendKeys("AB");
-				
-				
-				up.nwpwd.sendKeys("password");
-				
-				
-				up.confirmpwd.sendKeys("password");
-				
-				up.email.click();
-				up.email.sendKeys("abcd@gmail.com");
 	}
 }
