@@ -3,11 +3,13 @@ package usercreation_test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import homepagetest.HomepageTestBase;
 import pages.NewUserPage;
 import pages.UserPage;
+import pages.UserSearchPage;
 
 public class NewUserCreation extends UserpageTestBase{
 
@@ -19,18 +21,19 @@ public class NewUserCreation extends UserpageTestBase{
 		
 		NewUserPage nup = new NewUserPage(driver);
 		
+		
 				
 				nup.enterFullname("Blue");
 								
-				nup.enterEmpID();
+				nup.enterEmpID("1234");
 								
-				nup.enterUsername("AB");
+				String s = nup.enterUsername("AB");
 								
 				nup.enterNewPswd();
 								
 				nup.ConfirmPassword();
 								
-				nup.enterEmail();
+				nup.enterEmail("abcd");
 				nup.Locale("English (United States)");
 				nup.LanguageSelect();
 				nup.enterPhone();
@@ -48,5 +51,10 @@ public class NewUserCreation extends UserpageTestBase{
 				
 				nup.CreateUser();
 				
+				UserSearchPage us = new UserSearchPage(driver); 
+				String k = us.userSearch(s);
+				System.out.println(k);
+				System.out.println(s);
+				Assert.assertEquals(s,k);
 	}
 }

@@ -73,13 +73,17 @@ public class NewUserPage {
 		
 	}
 
-	public void enterEmpID() {
-		empid.sendKeys("12345678");
+	public void enterEmpID(String eid) {
+		empid.sendKeys(eid + StringOperations.randomIntegerGenertae(4));
 		
 	}
 
-	public void enterUsername(String usname) {
-	uname.sendKeys(usname + StringOperations.randomStringGenerate(2));
+	public String enterUsername(String usname) {
+		
+		String s = usname + StringOperations.randomStringGenerate(2);
+	uname.sendKeys(s);
+	return s;
+	
 		
 	}
 
@@ -93,8 +97,8 @@ public class NewUserPage {
 		
 	}
 
-	public void enterEmail() {
-		email.sendKeys("abcd@gmail.com");
+	public void enterEmail(String mail) {
+		email.sendKeys(mail + StringOperations.randomStringGenerate(3) + "@gmail.com");
 		
 	}
 
@@ -133,7 +137,7 @@ public class NewUserPage {
 			Robot robot = new Robot();
 			
 			robot.keyPress(KeyEvent.VK_CONTROL);
-			Thread.sleep(1000);
+		    Thread.sleep(1000);
 			robot.keyPress(KeyEvent.VK_V);
 			Thread.sleep(1000);
 			robot.keyRelease(KeyEvent.VK_V);

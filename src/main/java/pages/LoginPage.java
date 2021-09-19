@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utils.Screenshot;
+
 public class LoginPage {
 	
 public LoginPage(WebDriver driver) {
@@ -32,8 +34,15 @@ public void enterPassword(String pwd) {
 	pswd.sendKeys(pwd);	
 }
 
+
 public void clickSignIn() {
 	signInButton.click();
+	
+}
+
+public void takescrnshot(WebDriver driver) {
+	Screenshot.takeScreenshot(driver, "C:\\Users\\athir\\eclipse-workspace\\BuffaloCart\\loginscreenshot.PNG");
+	
 	
 }
 		

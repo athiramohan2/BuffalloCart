@@ -8,11 +8,11 @@ import pages.UserSearchPage;
 
 public class SearchUser extends SearchUserTestBase{
 
-	@Test
+@Test	
 	public void searchUser()
 	{
 		UserSearchPage up = new UserSearchPage(driver);
-		up.userSearch();
+		up.userSearch("Blue");
 		up.clickNewlyCreatedUser();
 	}
 	
