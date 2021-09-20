@@ -1,9 +1,19 @@
 package pages;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+
+import utils.StringOperations;
 
 public class UserPage {
 	public UserPage(WebDriver driver) {
@@ -14,23 +24,12 @@ public class UserPage {
 	@FindBy(xpath = "//a[@href='#new']")
 	public WebElement NewUser;
 	
-	@FindBy(name = "fullname")
-	public WebElement fullname;
 	
-	@FindBy(id = "check_employment_id")
-	public WebElement empid;
-	
-	@FindBy(id = "check_username")
-	public WebElement uname;
-	
-	@FindBy(id = "new_password")
-	public WebElement nwpwd;
-	
-	@FindBy(name = "confirm_password")
-	public WebElement confirmpwd;
-	
-	@FindBy(id = "check_email_addrees")
-	public WebElement email;
+
+	public void ClickNewUser() {
+		NewUser.click();
+		
+	}
 	
 	
 }

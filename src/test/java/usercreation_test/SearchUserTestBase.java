@@ -1,26 +1,24 @@
-package homepagetest;
+package usercreation_test;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
-import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import pages.HomePage;
 import pages.LoginPage;
+import pages.UserPage;
+import pages.UserSearchPage;
 import utils.DriverFactory;
-import utils.Screenshot;
 
-public class HomepageTestBase {
-	
-	WebDriver driver;
+public class SearchUserTestBase {
+WebDriver driver;
 	
 	@BeforeMethod
 		
-		public void openurl()
+		public void openurl() throws InterruptedException
 		{
-			//DriverFactory.getDriver("chrome");
+		
 			driver = DriverFactory.getDriver("chrome");
+			
 			DriverFactory.setImplicitWait(20, driver);
 			driver.get("https://erp.buffalocart.com/login");
 			System.out.println(driver.getCurrentUrl());
@@ -32,18 +30,11 @@ public class HomepageTestBase {
 			
 			lp1.clickSignIn();
 			
+			HomePage hp = new HomePage(driver);
+			Thread.sleep(10000);
 			
+			hp.user.click();
+					
 			}
-
-	@AfterMethod
-	public void tearDown(ITestResult result)
-	{
-		if(result.getStatus()==ITestResult.FAILURE)
-		{
-			Screenshot.takeScreenshot(driver, result.getTestName());
-		}
-	driver.quit();
-	}
-
 
 }

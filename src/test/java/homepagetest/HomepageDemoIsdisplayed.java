@@ -17,11 +17,18 @@ public class HomepageDemoIsdisplayed extends HomepageTestBase{
 		
 		HomePage hp2 = new HomePage(driver);
 		hp2.getdemotext();
-		System.out.println();
+		System.out.println("demo text");
 		String expected = "demo";
 		String actual = hp2.getdemotext();
 		Assert.assertEquals(actual, expected);
 		
+		
+		hp2.scrolltoElement(driver);
+		System.out.println("text");
+		
+
+		
 	}
+	
 
 }

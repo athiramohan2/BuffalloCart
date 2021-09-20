@@ -6,11 +6,15 @@ import java.util.Map;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import pages.HomePage;
 import pages.LoginPage;
+import pages.UserPage;
 import utils.DriverFactory;
+import utils.Screenshot;
 
 public class UserpageTestBase {
 WebDriver driver;
@@ -38,7 +42,20 @@ WebDriver driver;
 			
 			hp.user.click();
 			
+			UserPage up = new UserPage(driver);
+			up.ClickNewUser();
+			
 			
 			}
+	
+	@AfterMethod
+	public void tearDown(ITestResult result)
+	{
+		if(result.getStatus()==ITestResult.FAILURE)
+		{
+			Screenshot.takeScreenshot(driver, result.getTestName());
+		}
+	driver.quit();
+	}
 
 }

@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="usercreation_test.NewUserCreation">
+      <class name="filemanagertest.CreateNewFolder">
         <methods>
-          <include name="createUser"/>
+          <include name="createfolder"/>
           <include name="openurl"/>
         </methods>
-      </class> <!-- usercreation_test.NewUserCreation -->
+      </class> <!-- filemanagertest.CreateNewFolder -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

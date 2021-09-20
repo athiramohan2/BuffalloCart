@@ -15,6 +15,8 @@ public class LoginSuccessTest extends LoginTestBase{
 		
 		lp1.enterPassword("123456");
 		
+		lp1.takescrnshot(driver);
+		
 		lp1.clickSignIn();
 		
 		System.out.println(driver.getTitle());
