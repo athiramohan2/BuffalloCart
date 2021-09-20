@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utils.StringOperations;
+
 public class FileManagerPage {
 	public FileManagerPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -24,10 +26,7 @@ public class FileManagerPage {
 	public void createNewFolder()
 	{
 		newfolder.click();
-	}
-	
-	public void enterFolderName()
-	{
 		
 	}
+	
 }

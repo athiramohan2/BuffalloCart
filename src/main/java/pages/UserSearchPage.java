@@ -23,8 +23,15 @@ public class UserSearchPage {
 	public WebElement userDisplayed;
 	
 	
-	@FindBy(xpath = "//a[@href='https://erp.buffalocart.com/admin/user/user_details/98\']")
-	public WebElement newlyCreatedUser;
+	@FindBy(xpath = "(//span[@class='fa fa-close'])[1]")
+	public WebElement EditUser;
+	
+	@FindBy(xpath = "(//button[text()='Close'])")
+	public WebElement closebutton;
+	
+	@FindBy(xpath = "(//span[@class='fa fa-trash-o'])[1]")
+	public WebElement delUser;
+	
 	
 	public String userSearch(String UserName) {
 		
@@ -35,8 +42,14 @@ public class UserSearchPage {
 		
 	}
 	
-	public void clickNewlyCreatedUser()
+	public void EditUser()
 	{
-		newlyCreatedUser.click();
+		EditUser.click();
+		closebutton.click();
+	}
+	
+	public void DeleteUser()
+	{
+		delUser.click();
 	}
 }

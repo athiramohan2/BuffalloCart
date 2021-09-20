@@ -9,12 +9,21 @@ import pages.UserSearchPage;
 public class SearchUser extends SearchUserTestBase{
 
 @Test	
-	public void searchUser()
+	public void searchandEditUser()
 	{
 		UserSearchPage up = new UserSearchPage(driver);
 		up.userSearch("Blue");
-		up.clickNewlyCreatedUser();
+		up.EditUser();
+		
 	}
+
+@Test
+public void searchandDeleteUser()
+{
+	UserSearchPage up = new UserSearchPage(driver);
+	up.userSearch("Blue");
+	up.DeleteUser();
+}
 	
 
 }

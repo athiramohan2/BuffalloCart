@@ -13,7 +13,12 @@ public class Screenshot {
 	public static void takeScreenshot(WebDriver driver, String filename)
 	{
 		
-		Date date = new Date();
+		Date date=new Date();
+		String currentDate_Time=date.toString().replace(":", "_").replace(" ","_")+".png";
+		String targetPath="C:\\Users\\USER\\eclipse-workspace\\BuffaloCart\\target\\ScreenShots";
+		filename =targetPath+"\\"+filename+"_"+currentDate_Time;
+		System.out.println(filename);
+		
 		TakesScreenshot scrShot =((TakesScreenshot)driver);
 		File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
 		File DestFile=new File(filename);

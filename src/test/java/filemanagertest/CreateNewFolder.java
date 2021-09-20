@@ -11,8 +11,6 @@ public class CreateNewFolder extends FileManagerTestBase{
 	
 	FileManagerPage f = new FileManagerPage(driver);
 	f.clickfilemanager();
-	f.createNewFolder();
-	
 	
 	}
 

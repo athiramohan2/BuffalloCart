@@ -3,11 +3,13 @@ package homepagetest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import pages.LoginPage;
 import utils.DriverFactory;
+import utils.Screenshot;
 
 public class HomepageTestBase {
 	
@@ -34,9 +36,14 @@ public class HomepageTestBase {
 			}
 
 	@AfterMethod
-	public void quitdriver()
+	public void tearDown(ITestResult result)
 	{
-		driver.quit();
+		if(result.getStatus()==ITestResult.FAILURE)
+		{
+			Screenshot.takeScreenshot(driver, result.getTestName());
+		}
+	driver.quit();
 	}
+
 
 }

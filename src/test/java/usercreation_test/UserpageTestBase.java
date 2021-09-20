@@ -48,13 +48,14 @@ WebDriver driver;
 			
 			}
 	
-//	@AfterMethod
-//	public void tearDown(ITestResult result)
-//	{
-//		if(result.getStatus()==ITestResult.FAILURE)
-//		{
-//			Screenshot.takeScreenshot(driver, result.getTestName());
-//		}
-//	}
+	@AfterMethod
+	public void tearDown(ITestResult result)
+	{
+		if(result.getStatus()==ITestResult.FAILURE)
+		{
+			Screenshot.takeScreenshot(driver, result.getTestName());
+		}
+	driver.quit();
+	}
 
 }
