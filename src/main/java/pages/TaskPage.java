@@ -41,7 +41,6 @@ WebDriver driver;
 	public void enterTaskname(String task)
 	{
 		taskname.sendKeys(task + StringOperations.randomStringGenerate(2));
-		System.out.println("TAsk Name");
 	}
 	
 	public void selectRelatedto(String relatedTo1)
