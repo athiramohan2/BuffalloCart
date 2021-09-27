@@ -15,7 +15,7 @@ public class Screenshot {
 		
 		Date date=new Date();
 		String currentDate_Time=date.toString().replace(":", "_").replace(" ","_")+".png";
-		String targetPath="C:\\Users\\USER\\eclipse-workspace\\BuffaloCart\\target\\ScreenShots";
+		String targetPath="C:\\Users\\athir\\eclipse-workspace\\BuffaloCart\\";
 		filename =targetPath+"\\"+filename+"_"+currentDate_Time;
 		System.out.println(filename);
 		

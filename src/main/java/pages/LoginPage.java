@@ -40,12 +40,5 @@ public void clickSignIn() {
 	
 }
 
-public void takescrnshot(WebDriver driver) {
-	Screenshot.takeScreenshot(driver, "C:\\Users\\athir\\eclipse-workspace\\BuffaloCart\\loginscreenshot.PNG");
-	
-	
-}
-		
-
 
 }
